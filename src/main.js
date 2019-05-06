@@ -18,14 +18,15 @@ Vue.config.productionTip = false
 
 
 const router = new VueRouter({
-  [
-    { path: "/app1", component: CardContainer, name: "app1" },
-    { path: "/app2", component: CardContainer, name: "app2" },
-    { path: "/app2", component: CardContainer, name: "app3" },
-    { path: "/app2", component: CardContainer, name: "app4" },
-    // if they enter any other page redirect to the home page
-    { path: "*", redirect: { name: "app1" } }
-  ]
+  routes:
+    [
+      { path: "/app1", component: CardContainer, name: "app1" },
+      { path: "/app2", component: CardContainer, name: "app2" },
+      { path: "/app2", component: CardContainer, name: "app3" },
+      { path: "/app2", component: CardContainer, name: "app4" },
+      // if they enter any other page redirect to the home page
+      { path: "*", redirect: { name: "app1" } }
+    ]
 })
 
 new Vue({
