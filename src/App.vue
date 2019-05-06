@@ -9,6 +9,18 @@
 import Main from "./components/Main.vue";
 
 export default {
+  data() {
+    return {
+      appOne: [
+        { id: "1", image_url: "", title: "", content: "" },
+        { id: "2", image_url: "", title: "", content: "" },
+        { id: "3", image_url: "", title: "", content: "" }
+      ],
+      appTwo: [],
+      appThree: [],
+      appFour: []
+    };
+  },
   components: {
     Main
   }

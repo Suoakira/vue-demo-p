@@ -1,10 +1,11 @@
 <template>
-  <sidebar-menu :menu="menu" width="105.5px" widthCollapsed="53.5px" theme="white"/>
+  <sidebar-menu :menu="menu" width="105.5px" widthCollapsed="53.5px"/>
 </template>
 
 
 <script>
 // settings props https://yaminncco.github.io/vue-sidebar-menu/#/props
+import CardContainer from "./CardContiner.vue";
 
 export default {
   data() {
@@ -13,7 +14,6 @@ export default {
         {
           header: true,
           title: "Integnity",
-          // component: componentName
           visibleOnCollapse: false
           // class:''
           // attributes: {}
@@ -21,27 +21,49 @@ export default {
         {
           // item
           href: "/appone",
-          title: "APP-1",
-          icon: "fa fa-user"
+          title: "APP1",
+          icon: "fa fa-user",
           // disabled: true
           // class:''
           // attributes: {}
-          /*
-                        badge: {
-                            text: 'new',
-                            // class:''
-                            // attributes: {}
-                        }
-                        */
+
+          badge: {
+            text: "APP1"
+            // class:''
+            // attributes: {}
+          }
         },
         {
           // item with child
           href: "/apptwo",
-          title: "APP-2",
-          icon: "fa fa-chart-area"
+          title: "APP2",
+          icon: "fa fa-chart-area",
+          badge: {
+            text: "APP2"
+            // class:''
+            // attributes: {}
+          }
         },
-        { href: "/appthree", title: "APP-3", icon: "fa fa-user" },
-        { href: "/appfour", title: "APP-4", icon: "fa fa-user" }
+        {
+          href: "/appthree",
+          title: "APP3",
+          icon: "fa fa-user",
+          badge: {
+            text: "APP3"
+            // class:''
+            // attributes: {}
+          }
+        },
+        {
+          href: "/appfour",
+          title: "APP4",
+          icon: "fa fa-user",
+          badge: {
+            text: "APP4"
+            // class:''
+            // attributes: {}
+          }
+        }
       ]
     };
   }
