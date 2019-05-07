@@ -1,6 +1,7 @@
 <template>
   <div class="main">
     <SideBar></SideBar>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -16,5 +17,6 @@ export default {
 
 <style>
 .main {
+  margin: 5%;
 }
 </style>
