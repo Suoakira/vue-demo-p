@@ -31,7 +31,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  data: { color: '#673AB7' },
   render: h => h(App),
 
 }).$mount('#app')
