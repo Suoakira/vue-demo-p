@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Main from "./components/Main.vue";
+import Main from "./containers/Main.vue";
 
 export default {
   data() {

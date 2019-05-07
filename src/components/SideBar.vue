@@ -4,68 +4,12 @@
 
 
 <script>
-// settings props https://yaminncco.github.io/vue-sidebar-menu/#/props
-import CardContainer from "./CardContiner.vue";
+// settings props https://yaminncco.github.io/vue-sidebar-menu/#/propså
 
 export default {
   data() {
     return {
-      menu: [
-        {
-          header: true,
-          title: "Integnity",
-          visibleOnCollapse: false
-          // class:''
-          // attributes: {}
-        },
-        {
-          // item
-          href: "/appone",
-          title: "APP1",
-          icon: "fa fa-user",
-          // disabled: true
-          // class:''
-          // attributes: {}
 
-          badge: {
-            text: "APP1"
-            // class:''
-            // attributes: {}
-          }
-        },
-        {
-          // item with child
-          href: "/apptwo",
-          title: "APP2",
-          icon: "fa fa-chart-area",
-          badge: {
-            text: "APP2"
-            // class:''
-            // attributes: {}
-          }
-        },
-        {
-          href: "/appthree",
-          title: "APP3",
-          icon: "fa fa-user",
-          badge: {
-            text: "APP3"
-            // class:''
-            // attributes: {}
-          }
-        },
-        {
-          href: "/appfour",
-          title: "APP4",
-          icon: "fa fa-user",
-          badge: {
-            text: "APP4"
-            // class:''
-            // attributes: {}
-          }
-        }
-      ]
-    };
   }
 };
 </script>

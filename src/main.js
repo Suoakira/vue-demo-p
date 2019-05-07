@@ -4,7 +4,10 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import VueRouter from "vue-router"
-import CardContainer from "./components/CardContiner.vue"
+
+//demo applications
+import AppOne from "./components/applications/AppOne.vue"
+import AppTwo  from "./components/applications/AppTwo.vue"
 
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -20,10 +23,10 @@ Vue.config.productionTip = false
 const router = new VueRouter({
   routes:
     [
-      { path: "/app1", component: CardContainer, name: "app1" },
-      { path: "/app2", component: CardContainer, name: "app2" },
-      { path: "/app2", component: CardContainer, name: "app3" },
-      { path: "/app2", component: CardContainer, name: "app4" },
+      { path: "/app1", component: AppOne, name: "app1" },
+      { path: "/app2", component: AppTwo, name: "app2" },
+      { path: "/app2", component: AppOne, name: "app3" },
+      { path: "/app2", component: AppOne, name: "app4" },
       // if they enter any other page redirect to the home page
       { path: "*", redirect: { name: "app1" } }
     ]
