@@ -1,13 +1,13 @@
 <template>
-  <div class="main"> 
-  <SideBar></SideBar>
-  <router-view></router-view>
+  <div class="main">
+    <SideBar></SideBar>
 
+    <router-view></router-view>
   </div>
 </template>
 
-    <script>
-import SideBar from "../containers/SideBar"
+<script>
+import SideBar from "../components/SideBar.vue";
 
 export default {
   components: {
@@ -18,6 +18,6 @@ export default {
 
 <style>
 .main {
-
+  margin: 5%;
 }
 </style>

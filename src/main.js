@@ -4,10 +4,8 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import VueRouter from "vue-router"
+// demo apps
 import AppOne from "./components/applications/appOne.vue"
-
-
-
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -23,7 +21,6 @@ const router = new VueRouter({
   routes:
     [
       { path: "/app1", component: AppOne, name: "app1" },
-      { path: "/app2", component: AppOne, name: "app2" },
       { path: "/app2", component: AppOne, name: "app3" },
       { path: "/app2", component: AppOne, name: "app4" },
       // if they enter any other page redirect to the home page
@@ -34,5 +31,4 @@ const router = new VueRouter({
 new Vue({
   router,
   render: h => h(App),
-
 }).$mount('#app')
