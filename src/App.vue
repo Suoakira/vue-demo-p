@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Main></Main>
-    <side-bar></side-bar>
+    <SideBar></SideBar>
   </div>
 </template>
 
@@ -10,12 +10,7 @@ import Main from "./containers/Main.vue";
 
 export default {
   data() {
-    return {
-      appOne: [],
-      appTwo: [],
-      appThree: [],
-      appFour: []
-    };
+    return {};
   },
   components: {
     Main
@@ -29,8 +24,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  border-radius: 1%;
-  background-color: #252525;
+
+  background-color: #232323;
 }
 </style>

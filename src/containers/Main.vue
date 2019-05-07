@@ -1,11 +1,12 @@
 <template>
   <div class="main">
     <SideBar></SideBar>
+
     <router-view></router-view>
   </div>
 </template>
 
-    <script>
+<script>
 import SideBar from "../components/SideBar.vue";
 
 export default {
