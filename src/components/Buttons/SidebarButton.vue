@@ -1,7 +1,5 @@
 <template>
-
-        <div class="side-button-large"></div>
-
+    <div class="side-button-large"></div>
 </template>
 
 
@@ -21,6 +19,10 @@ export default {
         height: 39px;
         border-radius: 7px;
         margin-bottom: 5px;
+    }
+
+    .side-button-large:hover {
+        background-color: #494949;
     }
 </style>
 
