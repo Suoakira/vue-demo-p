@@ -1,6 +1,6 @@
 <template>
 <div class="side-bar">
-    <router-link to="/app-one">
+    <router-link to="/app-one/dashboard">
       <SideBarButton></SideBarButton>
     </router-link>
 
@@ -16,7 +16,9 @@
       <SideBarButton></SideBarButton>
     </router-link>
 
-  <div class="main-settings-button"> <MainSettingsButton></MainSettingsButton></div>
+  <div class="main-settings-button"> 
+    <MainSettingsButton></MainSettingsButton>
+  </div>
 
 </div>
 </template>

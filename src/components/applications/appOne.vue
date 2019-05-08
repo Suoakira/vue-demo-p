@@ -1,7 +1,14 @@
 <template>
 <b-container fluid>
-    <Header></Header>
-    <NavBar/>
+    <b-row>
+        <Header></Header>
+    </b-row>
+    <b-row>
+        <NavBar/>
+    </b-row>
+    <b-row>
+        <router-view></router-view>
+    </b-row>
 </b-container>
 </template>
 
@@ -18,6 +25,5 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
 
