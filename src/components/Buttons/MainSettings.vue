@@ -15,6 +15,7 @@ export default {
 
     .side-button-large {
         margin: 0 auto;
+        
         background-color: #2F2F2F;
         width: 39px;
         height: 39px;

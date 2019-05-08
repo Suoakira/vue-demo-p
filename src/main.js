@@ -4,11 +4,11 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import VueRouter from "vue-router"
-import AppOne from "./components/applications/appOne.vue"
 
+// routes
+import { routes } from "../routes/routes.js"
 
-
-
+// styles
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
@@ -20,15 +20,7 @@ Vue.config.productionTip = false
 
 
 const router = new VueRouter({
-  routes:
-    [
-      { path: "/app1", component: AppOne, name: "app1" },
-      { path: "/app2", component: AppOne, name: "app2" },
-      { path: "/app2", component: AppOne, name: "app3" },
-      { path: "/app2", component: AppOne, name: "app4" },
-      // if they enter any other page redirect to the home page
-      { path: "*", redirect: { name: "app1" } }
-    ]
+  routes
 })
 
 new Vue({

@@ -1,11 +1,22 @@
 <template>
 <div class="side-bar">
-  <SideBarButton></SideBarButton>
-  <SideBarButton></SideBarButton>
-  <SideBarButton></SideBarButton>
-  <SideBarButton></SideBarButton>
-  <div class="main-settings-button"> <MainSettingsButton></MainSettingsButton></div>
+    <router-link to="/app-one">
+      <SideBarButton></SideBarButton>
+    </router-link>
 
+    <router-link to="/app-two">
+      <SideBarButton></SideBarButton>
+    </router-link>
+
+    <router-link to="/app-three">
+      <SideBarButton></SideBarButton>
+    </router-link>
+  
+    <router-link to="/app-four">
+      <SideBarButton></SideBarButton>
+    </router-link>
+
+  <div class="main-settings-button"> <MainSettingsButton></MainSettingsButton></div>
 
 </div>
 </template>
@@ -31,12 +42,13 @@ export default {
     height: 720px;
     width: 50px;
     background-color: #272727;
+    float: left;
   }
 
   .main-settings-button {
     padding-left: 5px;
     margin: 0 auto;
-    position: fixed;
+    position: absolute;
     bottom: 0;
 
   }
