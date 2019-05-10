@@ -1,18 +1,17 @@
 <template>
     <div class="navbar-button-lg">
-        <div class="navbar-button-text-lg">{{ buttonText }}</div>
+        <div class="navbar-button-text-lg" >{{ buttonText }}</div>
     </div>
 </template>
 
 
 <script>
 export default {
-    props: ["buttonText"]
+    props: ["buttonText", "pathMatched"]
 }
 </script>
 
 <style>
-
     .navbar-button-lg {
         float: left;
         margin: 0 auto;
@@ -37,7 +36,5 @@ export default {
         font-weight: bold;
         color: #606060;
     }
-
-
 </style>
 

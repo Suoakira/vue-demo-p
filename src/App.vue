@@ -16,7 +16,10 @@ export default {
   },
   components: {
     Main
-  }
+  },
+  created() {
+    console.log(this.$router.currentRoute)
+    }
 };
 </script>
 

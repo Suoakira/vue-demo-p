@@ -2,7 +2,7 @@
 <template>
 <div>
     <Categories></Categories>
-    <Categories></Categories>
+    <Collections></Collections>
 
     
 </div>
@@ -16,6 +16,9 @@ export default {
     components: {
         Categories,
         Collections
+    },
+    created() {
+        console.log(this.$router.currentRoute)
     }
     
 }

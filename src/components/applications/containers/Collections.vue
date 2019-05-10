@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Card from "../../../components/Card"
+import Card from "../../../components/Card.vue"
 export default {
     data() {
         return {
@@ -37,9 +37,8 @@ export default {
         Card
     },
     created() {
-
+        console.log(this.$router.currentRoute)
     }
-    
 }
 </script>
 

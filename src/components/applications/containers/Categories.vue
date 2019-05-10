@@ -19,27 +19,97 @@
            </b-col>
         </b-row>
         <b-row>
-            <div v-for="n in 6" class="card-container">
-                <Card />
+            <div v-for="cat in categories" :key="cat.id" class="card-container" >
+                <div @click.meta="selectCard(cat, categories)" @click.shift="multiSelect(cat)" class="card-back" v-bind:style="{ backgroundColor: cat.selected ? `yellow` : 'blue'}"  >
+                    <Card />
+
+                </div>
             </div>
         </b-row>
     </b-container>
 </template>
 
 <script>
-import Card from "../../../components/Card"
+import Card from "../../../components/Card.vue"
 export default {
     data() {
         return {
+            selectedCats: [],
+            arrayOfShiftClicks: [],
+            categories: [
+                { 
+                id: "1", 
+                image_url: "https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", 
+                title: "Demo1", 
+                content: "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
+                selected: false
+                },
+                { 
+                id: "2", 
+                image_url: "https://images.pexels.com/photos/46253/mt-fuji-sea-of-clouds-sunrise-46253.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+                title: "Demo2", 
+                content: "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
+                selected: false
+                },
+                { id: "3", 
+                image_url: "https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", 
+                title: "Demo3", 
+                content: "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
+                selected: false
+                },
+                { 
+                id: "4", 
+                image_url: "https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", 
+                title: "Demo4", 
+                content:  "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
+                selected: false
+                },
+                { 
+                id: "5", 
+                image_url: "https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", 
+                title: "Demo4", 
+                content:  "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
+                selected: false
+                },
+                { 
+                id: "6", 
+                image_url: "https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", 
+                title: "Demo4", 
+                content:  "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
+                selected: false
+                }
+            ]
         }
     },
+    methods: {
+        selectCard(cat, categories) {
+            cat.selected = !cat.selected
+            const filteredCats = this.categories.filter(cat => cat.selected)
+            this.selectedCats = filteredCats
+            this.$bus.$emit("selectedCats", this.selectedCats)
+            console.log("cardSelected", this.selectedCats)
+        },
+        multiSelect(cat) {
+            console.log(cat)
+            cat.selected = true
+            this.arrayOfShiftClicks.push(cat)
+            if (this.arrayOfShiftClicks.length > 2) {
+                const selectedCats = this.arrayOfShiftClicks.filter(cat => cat.selected)
+                let firstCatIndex = this.categories.indexOf(selectedCats[selectedCats.length -2])
+                let lastCatIndex = this.categories.indexOf(selectedCats[selectedCats.length -1])
+                    console.log(firstCatIndex, lastCatIndex)
+                    let sortedLength = [firstCatIndex, lastCatIndex]
+                    let sortedArray = sortedLength.sort((a, b) => a - b)
+                    console.log(sortedArray)
+                    const copyOfSelected = this.categories.slice(sortedArray[0], sortedArray[1])
+                    this.selectedCats = copyOfSelected.map(cat => cat.selected = true)
+            }
+        }
+    },
+
     components: {
         Card
-    },
-    created() {
-
     }
-    
 }
 </script>
 
@@ -64,6 +134,10 @@ export default {
         margin-top: 1.6em;
         font-size: .7em;
         font-weight: bold;
+    }
+
+    .card-back {
+        padding: 2px;
     }
   
     
