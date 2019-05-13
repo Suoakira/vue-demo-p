@@ -13,8 +13,8 @@
         </b-row>
         <b-row>
            <b-col>
-               <div class="col-description-lg lower-cards">
-                   Latest collections added
+               <div class="cat-description-lg lower-cards">
+                <h5>{{ this.$router.currentRoute.fullPath }}</h5>
                </div>
            </b-col>
         </b-row>

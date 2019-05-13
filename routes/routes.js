@@ -6,6 +6,8 @@ import AppFour from "../src/components/applications/appFour.vue"
 
 // main panel views aka dashboard, collections etc
 import Categories from "./../src/components/applications/containers/Categories.vue"
+import CategoryItems from "./../src/components/applications/containers/CategoryItem.vue"
+
 import Collections from "./../src/components/applications/containers/Collections.vue"
 import Dashboard from "./../src/components/applications/containers/Dashboard.vue"
 import MyCollections from "./../src/components/applications/containers/MyCollections.vue"
@@ -20,7 +22,13 @@ export const routes =
             },
             {
                 path: 'categories',
-                component: Categories
+                component: Categories,
+                children: [
+                    {
+                        path: "items",
+                        component: CategoryItems
+                    }
+                ]
             },
             {
                 path: 'collections',

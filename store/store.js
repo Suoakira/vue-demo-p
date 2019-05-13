@@ -3,13 +3,21 @@ import Vuex from "vuex";
 
 // data
 import main from "../data/main.js"
-import applicationData from "../data/app-one-transitions"
+import applicationData from "../data/app-one-transitions.js"
 
 Vue.use(Vuex)
 
-export default new Vuex.store({
+export default new Vuex.Store({
     state: {
         mainData: main,
-        applicationData: applicationData
+        applicationData: applicationData,
+        selectedCategoryItems: []
     },
+    getters: {
+        mainData: state => state.mainData,
+        applicationData: state => state.applicationData
+    },
+    mutations: {
+        
+    }
 })

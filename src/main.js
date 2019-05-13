@@ -9,6 +9,7 @@ import VueRouter from "vue-router"
 import { routes } from "../routes/routes.js"
 
 // store
+import store from "../store/store.js"
 
 // styles
 import 'bootstrap/dist/css/bootstrap.css'
@@ -32,6 +33,7 @@ const router = new VueRouter({
 })
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

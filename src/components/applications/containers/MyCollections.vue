@@ -9,12 +9,6 @@ export default {
         return {
             selectedCats: []
         }
-    },
-
-    created() {
-        console.log(this.$bus)
-        this.$bus.$on("selectedCats", cats => this.selectedCats = cats )
-        console.log(this.selectedCats)
     }
 }
 </script>

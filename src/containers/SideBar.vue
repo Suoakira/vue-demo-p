@@ -27,6 +27,7 @@
 <script>
 import SideBarButton from "../components/Buttons/SidebarButton.vue"
 import MainSettingsButton from "../components/Buttons/MainSettings.vue"
+
 export default {
   data() {
     return {
@@ -35,6 +36,8 @@ export default {
   components: {
     SideBarButton,
     MainSettingsButton
+  },
+  created() {
   }
 };
 </script>
