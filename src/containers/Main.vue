@@ -1,9 +1,14 @@
 <template>
-  <div class="main">
-    <SideBar></SideBar>
 
-    <router-view></router-view>
-  </div>
+<div>
+    <div class="side-bar-lg"> 
+      <SideBar></SideBar>
+    </div>
+      <router-view></router-view>
+</div>
+
+
+
 </template>
 
 <script>
@@ -17,7 +22,7 @@ export default {
 </script>
 
 <style>
-.main {
-  margin: 5%;
-}
+  .side-bar-lg {
+    float: left;
+  }
 </style>

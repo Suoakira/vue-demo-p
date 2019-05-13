@@ -24,5 +24,7 @@ export default {
     .side-button-large:hover {
         background-color: #494949;
     }
+
+    
 </style>
 

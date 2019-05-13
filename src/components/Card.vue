@@ -1,20 +1,13 @@
 <template>
-  <div class="example z-depth-5">
-    <b-card
-      :title="title"
-      :img-src="img_url"
-      img-alt="img_url"
-      img-top
-      tag="article"
-      style="max-width: 20rem;"
-      class="mb-2"
-      bg-variant="dark"
-      text-variant="white"
-    >
-      <b-card-text>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</b-card-text>
 
-    </b-card>
-  </div>
+  <div class="bootstrap-card-lg">
+    <!-- //placeholder bootstrap card -->
+    <!-- <b-card
+      text-variant="secondary"
+      title="Card Title"
+      img-src="https://picsum.photos/600/300/?image=25"
+      img-alt="Image"
+>
 </template>
 
 <script>
@@ -27,3 +20,18 @@ export default {
   
 }
 </script>
+
+<style >
+  .bootstrap-card-lg {
+    font-size: .3em;
+    background-color: #272727;
+    height: 170px;
+    width: 120px;
+    margin: .4em;
+  }
+
+  .card-title {
+    font-size: .3em;
+  }
+</style>
+
