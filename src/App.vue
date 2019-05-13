@@ -8,18 +8,13 @@
 <script>
 import Main from "./containers/Main.vue";
 
-
 export default {
   data() {
-    return {
-    }
+    return {};
   },
   components: {
     Main
-  },
-  created() {
-    console.log(this.$router.currentRoute)
-    }
+  }
 };
 </script>
 

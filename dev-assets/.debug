@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<ExtensionList>
+  <Extension Id="com.integnity.vuepanels.dev>
+    <HostList>
+      <!-- Comment Host tags according to the apps you want your panel to support -->
+      <Host Name="PHXS" Port="8088"/>
+      <!-- Premiere -->
+      <Host Name="PPRO" Port="8084" />
+      <!-- AfterEffects -->
+      <Host Name="AEFT" Port="8083" />
+    </HostList>
+  </Extension>
+</ExtensionList>
