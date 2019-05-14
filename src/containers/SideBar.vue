@@ -1,19 +1,19 @@
 <template>
 <div class="side-bar">
     <router-link to="/app-one/dashboard">
-      <SideBarButton></SideBarButton>
+      <SideBarButton v-bind:style="{ backgroundColor: $route.fullPath.includes('/app-one') ? `yellow` : `blue`}"></SideBarButton>
     </router-link>
 
     <router-link to="/app-two">
-      <SideBarButton></SideBarButton>
+      <SideBarButton v-bind:style="{ backgroundColor: $route.fullPath.includes('/app-two') ? `yellow` : `blue`}"></SideBarButton>
     </router-link>
 
     <router-link to="/app-three">
-      <SideBarButton></SideBarButton>
+      <SideBarButton v-bind:style="{ backgroundColor: $route.fullPath.includes('/app-three') ? `yellow` : `blue`}"></SideBarButton>
     </router-link>
   
     <router-link to="/app-four">
-      <SideBarButton></SideBarButton>
+      <SideBarButton v-bind:style="{ backgroundColor: $route.fullPath.includes('/app-four') ? `yellow` : `blue`}"></SideBarButton>
     </router-link>
 
   <div class="main-settings-button"> 

@@ -34,7 +34,7 @@ export default {
         text-align: center;
         vertical-align: middle;
         font-weight: bold;
-        color: #606060;
+        color: white;
     }
 </style>
 
