@@ -5,13 +5,15 @@ import BootstrapVue from 'bootstrap-vue'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import VueRouter from "vue-router"
 
+
 // routes
 import { routes } from "../routes/routes.js"
 
 // store
 import store from "../store/store.js"
 
-// styles
+
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
