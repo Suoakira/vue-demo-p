@@ -12,6 +12,7 @@
 
     <script>
 import SideBar from "../containers/SideBar"
+import Collector from "../containers/Collector"
 
 export default {
   components: {

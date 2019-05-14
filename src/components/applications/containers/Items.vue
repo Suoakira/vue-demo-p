@@ -4,7 +4,7 @@
     <b-row>
       <div v-for="item in renderItems" v-bind:key="item.id">
         <!-- inline styleing for now if card is selected -->
-        <div v-bind:style="{ backgroundColor: item.selected ? `yellow` : `blue`}" class="test-card" @click.meta="selectCard(item, renderItems)">
+        <div v-bind:style="{ backgroundColor: item.selected ? `yellow` : `blue`}" class="test-card" @click.meta="selectCard(item)">
           <h3>{{ item.title }}</h3>
           <img :src="item.image_url">
         </div>
@@ -16,7 +16,7 @@
 
 <script>
 import Card from "../../Card.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   data() {
@@ -26,12 +26,11 @@ export default {
   },
   props: ["type"],
   methods: {
-    selectCard(item, items) {
-      item.selected = !item.selected;
-      const selectedItems = items.filter(item => item.selected);
-      let deepCopySelectedItems = JSON.parse(JSON.stringify(selectedItems))
-      this.filteredItems = deepCopySelectedItems;
-      console.log("cardSelected", this.filteredItems);
+    ...mapMutations(["selectCard"]),
+    selectCard(item) {
+      console.log("hello i clicked you")
+      console.log("item", item)
+      this.$store.commit("selectCard", item)
     }
   },
   computed: {

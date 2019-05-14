@@ -2,6 +2,7 @@ export default {
   categories: [
     {
       name: "cat-one"
+      
     },
     {
       name: "cat-two"

@@ -54,12 +54,13 @@ export default {
     Items
   },
   methods: {
-    selectCard(cat, categories) {
-      cat.selected = !cat.selected;
-      const filteredCats = this.categories.filter(cat => cat.selected);
-      this.selectedCats = filteredCats;
-      console.log("cardSelected", this.selectedCats);
-    },
+    // redudent code below
+    // selectCard(cat, categories) {
+    //   cat.selected = !cat.selected;
+    //   const filteredCats = this.categories.filter(cat => cat.selected);
+    //   this.selectedCats = filteredCats;
+    //   console.log("cardSelected", this.selectedCats);
+    // },
     // redundent code not needed functionality
     // multiSelect(cat) {
     //     console.log(cat)
@@ -76,23 +77,13 @@ export default {
     //             const copyOfSelected = this.categories.slice(sortedArray[0], sortedArray[1])
     //             this.selectedCats = copyOfSelected.map(cat => cat.selected = true)
     //     }
-    isSelected(type) {
-      this.selectedType = type;
-    }
+    // isSelected(type) {
+    //   this.selectedType = type;
+    // }
   },
   computed: {
     ...mapGetters(["mainData", "applicationData"]),
-    checkPath(path) {
-      // if current path is dashboard, load dashboard items else load category items
-      if (path === "/app-one/categories") {
-        return "/app-one/categories/items";
-      } else if (path === "/app-one/dashboard") {
-        return "";
-      }
-    }
   },
-  created() {
-  }
 };
 </script>
 
