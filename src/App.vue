@@ -7,18 +7,16 @@
 <script>
 import Main from "./containers/Main.vue";
 
-
 export default {
   data() {
-    return {
-    }
+    return {};
   },
   components: {
     Main
   },
   created() {
-    console.log(this.$router.currentRoute)
-    }
+    console.log(this.$router.currentRoute);
+  }
 };
 </script>
 
@@ -29,7 +27,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   height: 730px;
-
   background-color: #232323;
 }
 </style>

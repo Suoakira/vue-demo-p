@@ -15,8 +15,8 @@ export default {
         display: table;
         margin: 0 auto;
         background-color: #2F2F2F;
-        width: 39px;
-        height: 39px;
+        width: 56px;
+        height: 56px;
         border-radius: 7px;
         margin-bottom: 5px;
     }

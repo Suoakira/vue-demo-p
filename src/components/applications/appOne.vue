@@ -9,6 +9,10 @@
     <b-row>
         <router-view></router-view>
     </b-row>
+    <b-row>
+        <!-- passing the collector as a slot -->
+        <slot></slot>
+    </b-row>
 </b-container>
 </template>
 

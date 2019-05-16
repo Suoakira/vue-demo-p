@@ -45,7 +45,7 @@ export default {
 <style scoped>
   .side-bar {
     height: 720px;
-    width: 50px;
+    width: 66px;
     background-color: #272727;
     float: left;
   }
@@ -55,6 +55,5 @@ export default {
     margin: 0 auto;
     position: absolute;
     bottom: 0;
-
   }
 </style>

@@ -28,8 +28,8 @@ export default {
   .bootstrap-card-lg {
     font-size: .3em;
     background-color:blue;
-    height: 170px;
-    width: 120px;
+    height: 200px;
+    width: 140px;
     margin: .4em;
     color: white;
   }
