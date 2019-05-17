@@ -7,7 +7,7 @@
         <toggle-button @change="toggleCol = $event.value"/>
         <div class="toggle-values"></div>
         <b-button
-          variant="light"
+          variant="primary"
           :disabled="disabledCollector || collectorFull"
           @click="sendItemsToCollector"
         >Send to {{ toggleCol ? "After Effects" : "Collector" }}</b-button>

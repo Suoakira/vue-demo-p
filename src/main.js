@@ -7,8 +7,11 @@ import VueSidebarMenu from 'vue-sidebar-menu'
 import VueRouter from "vue-router"
 import ToggleButton from 'vue-js-toggle-button'
 
+
 // lodash sorting
-import _ from 'lodash';
+
+
+
 
 // routes
 import { routes } from "../routes/routes.js"
@@ -22,21 +25,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 // Object.defineProperty(Vue.prototype, '$_', { value: _ });
 
-
 Vue.use(VueRouter)
 Vue.use(VueSidebarMenu)
 Vue.use(BootstrapVue)
 Vue.use(ToggleButton)
-Vue.use(_)
+
 Vue.config.productionTip = false
-
-const bus = new Vue()
-Vue.prototype.$bus = bus
-Vue.prototype.$_ = _
-
-
-
-
 
 const router = new VueRouter({
   routes

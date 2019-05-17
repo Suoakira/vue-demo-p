@@ -24,9 +24,12 @@
       ></SideBarButton>
     </router-link>
 
-    <div class="main-settings-button">
-      <MainSettingsButton></MainSettingsButton>
-    </div>
+      <router-link to="/main-settings" v-b-modal.modal-lg>
+        <div class="main-settings-button">
+          <MainSettingsButton></MainSettingsButton>
+        </div>
+      </router-link>
+
   </div>
 </template>
 
@@ -39,11 +42,12 @@ export default {
   data() {
     return {};
   },
+  methods: {
+  },
   components: {
     SideBarButton,
     MainSettingsButton
-  },
-  created() {}
+  }
 };
 </script>
 

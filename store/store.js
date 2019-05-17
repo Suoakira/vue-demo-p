@@ -17,20 +17,26 @@ export default new Vuex.Store({
     selectedItems: [],
     collectorItems: [],
 
+    // main application data/ items
     mainData: main,
     applicationData: applicationData,
     items: items,
 
-    //main app
-    categoryCardsState: false
+    // main app
+    categoryCardsState: false,
   },
   getters: {
+
     // getters for main
     mainData: state => state.mainData,
     applicationData: state => state.applicationData,
     items: state => state.items,
+
     // getters for collector
-    collectorItems: state => state.collectorItems
+    collectorItems: state => state.collectorItems,
+
+    // settings
+    showSettings: state => state.showSettings
   },
   mutations: {
     //belongs to items
