@@ -42,7 +42,7 @@ export default new Vuex.Store({
     // belongs to collector
     sendItemsToStore(state, localSelectedItems) {
       const deepCopyLocalItems = JSON.parse(JSON.stringify(localSelectedItems))
-      deepCopyLocalItems.forEach(item => state.collectorItems.push(item))
+      this.deepCopyStateCollector = deepCopyLocalItems.forEach(item => state.collectorItems.push(item))
       const deepCopyStateCollector = JSON.parse(JSON.stringify(state.collectorItems))
       state.collectorItems = _.uniqBy(deepCopyStateCollector, 'id')
     },

@@ -1,18 +1,16 @@
 <template>
-    <div>Hello from App Two</div>
+  <div>Hello from App Two</div>
 </template>
 
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style scoped>
-    div {
-        height: 840px;
-        color: white;
-    }
+div {
+  height: 840px;
+  color: white;
+}
 </style>
 

@@ -6,27 +6,29 @@
 </template>
 
 <script>
-  import { mapGetters, mapMutations } from "vuex"
+import { mapGetters, mapMutations } from "vuex";
 export default {
   data() {
-    return {
-
-    }
+    return {};
   },
   props: ["img_url", "title", "showDelete", "item"],
   methods: {
     deleteItem() {
-      const deepCopyCollectorItems = JSON.parse(JSON.stringify(this.collectorItems))
-      console.log("deepCopyItem", deepCopyCollectorItems, "item", this.item)
-      console.log(this.item.id)
-    const filterDeleatedItems = deepCopyCollectorItems.filter(item => item.id !== this.item.id)
-    console.log(filterDeleatedItems)
-    //   console.log("itemid", item.id)
-    this.$store.commit("deleteCollectorItem", filterDeleatedItems)
-    },
+      const deepCopyCollectorItems = JSON.parse(
+        JSON.stringify(this.collectorItems)
+      );
+      console.log("deepCopyItem", deepCopyCollectorItems, "item", this.item);
+      console.log(this.item.id);
+      const filterDeleatedItems = deepCopyCollectorItems.filter(
+        item => item.id !== this.item.id
+      );
+      console.log(filterDeleatedItems);
+      //   console.log("itemid", item.id)
+      this.$store.commit("deleteCollectorItem", filterDeleatedItems);
+    }
   },
   computed: {
-    ...mapGetters(["collectorItems"]),
+    ...mapGetters(["collectorItems"])
   }
 };
 </script>

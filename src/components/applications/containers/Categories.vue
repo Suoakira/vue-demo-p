@@ -82,8 +82,8 @@ export default {
     // }
   },
   computed: {
-    ...mapGetters(["mainData", "applicationData"]),
-  },
+    ...mapGetters(["mainData", "applicationData"])
+  }
 };
 </script>
 
