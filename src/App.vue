@@ -29,4 +29,8 @@ export default {
   height: 730px;
   background-color: #232323;
 }
+
+::-webkit-scrollbar {
+display: none;
+}
 </style>

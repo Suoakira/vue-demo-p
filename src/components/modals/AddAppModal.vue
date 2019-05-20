@@ -25,7 +25,7 @@
                       <h1 class="card-title"></h1>
                       <p class="card-text">{{ app.name }}</p>
                       <p class="card-text">
-                        <button type="button" class="btn btn-danger">Uninstall</button>
+                        <button @click="showInstallModal" type="button" class="btn btn-danger">Uninstall</button>
                       </p>
                       <div>
                         <p class="card-text">
@@ -43,8 +43,8 @@
     </div>
   </modal>
 </template>
-
-<script>
+ 
+<script scoped>
 import { mapGetters } from "vuex";
 import Header from "../Header";
 export default {
@@ -52,6 +52,14 @@ export default {
     return {};
   },
   props: ["text"],
+  methods: {
+        showInstallModal() {
+          console.log("fired")
+      this.$modal.show(
+        'app-install'
+      )
+    }
+  },
   computed: {
     ...mapGetters(["mainData"])
   },
@@ -78,8 +86,11 @@ export default {
 
 .main-modal-cards {
   margin: 2%;
-  overflow: hidden;
+  height: 90%;
   overflow-y: scroll;
+  background-color: #2f2f2f;
+  padding: 2%;
+  border-radius: 1%;
 }
 
 .modal-header {
