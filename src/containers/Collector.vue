@@ -37,6 +37,7 @@ export default {
   },
   computed: {
     ...mapGetters(["collectorItems"]),
+    //renders items, adds placeholders depending on array length
     renderItems() {
       let deepItemsCopy = JSON.parse(JSON.stringify(this.collectorItems));
       this.localItems = deepItemsCopy;

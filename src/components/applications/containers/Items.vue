@@ -77,9 +77,11 @@ export default {
         this.$store.commit("sendItemsToStore", this.localSelected);
         // after items are sent to collector, they lose there selected status
         this.filteredItems.forEach(item => (item.selected = false));
+        // emptys localSelected when they are sent to the collector
+        this.localSelected = [] 
       }
     },
-    // disabled send to collector, if there are more than eight items selected/in collector combinded (bit buggy at the moment)
+    // disabled send to collector, if there are more than eight items selected/in collector (bit buggy at the moment)
     filterMaxItems() {
       const selectedCollectedItems = [
         ...this.collectorItems,
@@ -109,8 +111,14 @@ export default {
     },
     // checks if collector is full
     collectorFull() {
-      return this.collectorItems === 8;
+      return this.collectorItems.length === 8;
     }
+  },
+  // mounting filterMaxItems method, to be called in 'CollectorItem' (component) when a component is deleated.
+  mounted() {
+    this.$root.$on('Items', () => {
+      this.filterMaxItems()
+    })
   }
 };
 </script>

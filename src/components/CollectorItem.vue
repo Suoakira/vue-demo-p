@@ -17,15 +17,17 @@ export default {
       const deepCopyCollectorItems = JSON.parse(
         JSON.stringify(this.collectorItems)
       );
-      console.log("deepCopyItem", deepCopyCollectorItems, "item", this.item);
-      console.log(this.item.id);
+      // deleats items based on id, which is passed as a prop
       const filterDeleatedItems = deepCopyCollectorItems.filter(
         item => item.id !== this.item.id
       );
-      console.log(filterDeleatedItems);
-      //   console.log("itemid", item.id)
+
       this.$store.commit("deleteCollectorItem", filterDeleatedItems);
-    }
+      this.filterMaxItems()
+    },
+    filterMaxItems() {
+     this.$root.$emit('Items') //like this
+    },
   },
   computed: {
     ...mapGetters(["collectorItems"])

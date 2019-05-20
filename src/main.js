@@ -9,7 +9,7 @@ import ToggleButton from 'vue-js-toggle-button'
 
 
 // lodash sorting
-
+import _ from "lodash"
 
 
 
@@ -29,7 +29,6 @@ Vue.use(VueRouter)
 Vue.use(VueSidebarMenu)
 Vue.use(BootstrapVue)
 Vue.use(ToggleButton)
-
 Vue.config.productionTip = false
 
 const router = new VueRouter({
