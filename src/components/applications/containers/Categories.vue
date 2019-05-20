@@ -24,7 +24,7 @@
         <!-- <div @click.meta="selectCard(cat, categories)" @click.shift="multiSelect(cat)" class="card-back" v-bind:style="{ backgroundColor: cat.selected ? `yellow` : 'blue'}"  > -->
         <div
           v-show="$router.currentRoute.fullPath == '/app-one/categories' || $router.currentRoute.fullPath == '/app-one/dashboard'"
-          v-on:click="isSelected(cat)"
+          
         >
           <router-link :to="`/app-one/categories/items/${cat.name}`">
             <Card :title="cat.name"/>

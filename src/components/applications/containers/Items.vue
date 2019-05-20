@@ -2,8 +2,7 @@
   <div class="main-items">
     <b-row>
       <div class="row align-items-center">
->
-
+        >
         <toggle-button @change="toggleCol = $event.value"/>
         <div class="toggle-values"></div>
         <b-button
@@ -20,7 +19,9 @@
         <div
           v-bind:style="{ backgroundColor: item.selected ? `yellow` : `blue`}"
           class="test-card"
-          @click.meta="selectCard(item)"
+          @click.meta="selectCards(item)"
+          @click.exact="singleSelect(item)"
+          v-on:dblclick="doubleClickSelect(item)"
         >
           <h3>{{ item.title }}</h3>
           <img :src="item.image_url">
@@ -50,22 +51,30 @@ export default {
     ...mapMutations(["selectCard"]),
     // broken need to implement single select feature
     //sends the selected item to the store
-    // singleSelect(item) {
-    //   // this.localSelected = this.map(item => item.selected = false)
-    //   this.localSelected = this.filteredItems.map(
-    //     localItem => localItem.selected = false)
-
-    //   item.selected = !item.selected;
-
-    // },
-
+    singleSelect(item) {
+      // this.localSelected = this.map(item => item.selected = false)
+      this.localSelected = this.filteredItems.forEach(
+        localItem => (localItem.selected = false)
+      );
+      item.selected = !item.selected;
+      this.localSelected = this.filteredItems.filter(
+        localItem => localItem.selected
+      );
+      this.filterMaxItems();
+    },
+    doubleClickSelect(item) {
+      this.singleSelect(item);
+      this.sendItemsToCollector();
+      this.filterMaxItems();
+    },
     // multiSelect
-    selectCard(item, $event) {
+    selectCards(item, $event) {
       item.selected = !item.selected;
 
       this.localSelected = this.filteredItems.filter(
         localItem => localItem.selected
       );
+      console.log(this.localSelected);
       this.filterMaxItems();
     },
     toggleCollector() {
@@ -78,7 +87,7 @@ export default {
         // after items are sent to collector, they lose there selected status
         this.filteredItems.forEach(item => (item.selected = false));
         // emptys localSelected when they are sent to the collector
-        this.localSelected = [] 
+        this.localSelected = [];
       }
     },
     // disabled send to collector, if there are more than eight items selected/in collector (bit buggy at the moment)
@@ -116,9 +125,9 @@ export default {
   },
   // mounting filterMaxItems method, to be called in 'CollectorItem' (component) when a component is deleated.
   mounted() {
-    this.$root.$on('Items', () => {
-      this.filterMaxItems()
-    })
+    this.$root.$on("Items", () => {
+      this.filterMaxItems();
+    });
   }
 };
 </script>

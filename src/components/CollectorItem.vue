@@ -25,6 +25,7 @@ export default {
       this.$store.commit("deleteCollectorItem", filterDeleatedItems);
       this.filterMaxItems()
     },
+    // when item is deleated, calls a method from Items, that checks if 'send to collector button' should be disabled.
     filterMaxItems() {
      this.$root.$emit('Items') //like this
     },

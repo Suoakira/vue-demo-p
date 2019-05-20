@@ -1,21 +1,12 @@
 <template>
   <div>
-    <sweet-modal ref="nestedChild">This is the child modal.</sweet-modal>
-    <button @click="openModal">OPEN MODALLLL</button>
+    <h1>Hello from Settings</h1>
   </div>
 </template>
 
 <script>
 import { SweetModal, SweetModalTab } from "sweet-modal-vue";
 export default {
-  data() {
-    return {};
-  },
-  method: {
-    openModal() {
-      this.$refs.modal.open()
-    }
-  },
   components: {
     SweetModal,
     SweetModalTab
@@ -24,6 +15,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: white;
+}
 </style>
 

@@ -1,12 +1,12 @@
 <template>
     <div class="placeholder-header-lg">
-        <h6 class="header-title-lg">App-One</h6>
+        <h6 class="header-title-lg">{{ title }}</h6>
     </div>
 </template>
 
 <script>
 export default {
-    
+    props: ["title"]
 }
 </script>
 

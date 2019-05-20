@@ -2,7 +2,7 @@
 import AppOne from "../src/components/applications/appOne.vue"
 import AppTwo from "../src/components/applications/appTwo.vue"
 import Appthree from "../src/components/applications/appThree.vue"
-import AppFour from "../src/components/applications/appFour.vue"
+import AddApplication from "../src/components/applications/AddApplication.vue"
 
 // settings side bar
 import Settings from "../src/containers/Settings.vue"
@@ -57,7 +57,7 @@ export const routes =
         // other side bar applications
         { path: "/app-two", component: AppTwo, name: "app2" },
         { path: "/app-three", component: Appthree, name: "app3" },
-        { path: "/app-four", component: AppFour, name: "app4" },
+        { path: "/add-application", component: AddApplication, name: "AddApplication" },
 
         // settings route
         { path: "/main-settings", component: Settings, name: "main-settings" },

@@ -1,7 +1,8 @@
 <template>
 <b-container fluid>
     <b-row>
-        <Header></Header>
+        <!-- need to make this dynamic not static code header title -->
+        <Header title="Transitions X"></Header>
     </b-row>
     <b-row>
         <NavBar/>
