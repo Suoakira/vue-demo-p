@@ -75,7 +75,9 @@ export default {
   },
   methods: {
     ...mapMutations([""]),
+    // has a bug wont work the first time
     showInstallModal(app) {
+      this.$modal.show("app-install")
       this.appSelected = app;
       console.log(app);
       setTimeout(() => {
@@ -83,7 +85,7 @@ export default {
         this.$modal.hide("app-install");
       }, 3000);
 
-      this.$modal.show("app-install");
+      
     }
   },
   computed: {

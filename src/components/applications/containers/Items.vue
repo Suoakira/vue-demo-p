@@ -74,7 +74,6 @@ export default {
       this.localSelected = this.filteredItems.filter(
         localItem => localItem.selected
       );
-      console.log(this.localSelected);
       this.filterMaxItems();
     },
     toggleCollector() {

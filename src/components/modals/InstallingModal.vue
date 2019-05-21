@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <modal name="app-install" :width="480" :height="300" :adaptive="true" :scrollable="true">
+  <div v-if="app">
+    <modal :clickToClose="false" name="app-install" :width="480" :height="300" :adaptive="true" :scrollable="true">
       <div>
               <b-container class="bv-example-row bv-example-row-flex-cols" id="uninstall-top-modal">
         <b-row align-v="center">

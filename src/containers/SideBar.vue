@@ -2,15 +2,19 @@
 <!-- you can pass icons as props from font awesome -->
 <template>
   <div class="side-bar">
-    <div v-for="(app, index) in mainData.apps" :key="index" v-show="app.installed">
-      <!-- placeholder link, if app-one route to app-one/dashboard -->
-      <router-link :to="app.identifier === `app-one` ? `/${app.identifier}/dashboard` : `/${app.identifier}`">
-        <SideBarButton
-          :icon="app.icon"
-          v-bind:style="{ backgroundColor: $route.fullPath.includes(`/${app.identifier}`) ? `yellow` : `blue`}"
-        ></SideBarButton>
-      </router-link>
-    </div>
+    <draggable v-model="mainApps"  @start="drag=true" @end="drag=false">
+      <div v-for="(app, index) in mainData.apps" :key="index" v-show="app.installed">
+        <!-- placeholder link, if app-one route to app-one/dashboard -->
+        <router-link
+          :to="app.identifier === `app-one` ? `/${app.identifier}/dashboard` : `/${app.identifier}`"
+        >
+          <SideBarButton
+            :icon="app.icon"
+            v-bind:style="{ backgroundColor: $route.fullPath.includes(`/${app.identifier}`) ? `yellow` : `blue`}"
+          ></SideBarButton>
+        </router-link>
+      </div>
+    </draggable>
 
     <div @click="() => showAppModal()">
       <SideBarButton
@@ -33,6 +37,7 @@ import SideBarButton from "../components/Buttons/SidebarButton.vue";
 import MainSettingsButton from "../components/Buttons/MainSettings.vue";
 import AddAppModal from "../components/modals/AddAppModal.vue";
 import { mapGetters } from "vuex";
+import draggable from "vuedraggable";
 
 export default {
   methods: {
@@ -42,11 +47,22 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["mainData"])
+    ...mapGetters(["mainData"]),
+    // vue dragable implemenation
+    mainApps: {
+      get() {
+        return this.$store.state.mainData.apps;
+      },
+      set(value) {
+        console.log(value)
+        this.$store.commit("updateMainData", value);
+      }
+    }
   },
   components: {
     SideBarButton,
-    MainSettingsButton
+    MainSettingsButton,
+    draggable
   },
   created() {
     console.log("hello from side bar", this.mainData.apps);
