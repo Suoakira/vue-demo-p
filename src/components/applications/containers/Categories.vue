@@ -53,34 +53,6 @@ export default {
     Card,
     Items
   },
-  methods: {
-    // redudent code below
-    // selectCard(cat, categories) {
-    //   cat.selected = !cat.selected;
-    //   const filteredCats = this.categories.filter(cat => cat.selected);
-    //   this.selectedCats = filteredCats;
-    //   console.log("cardSelected", this.selectedCats);
-    // },
-    // redundent code not needed functionality
-    // multiSelect(cat) {
-    //     console.log(cat)
-    //     cat.selected = true
-    //     this.arrayOfShiftClicks.push(cat)
-    //     if (this.arrayOfShiftClicks.length > 2) {
-    //         const selectedCats = this.arrayOfShiftClicks.filter(cat => cat.selected)
-    //         let firstCatIndex = this.categories.indexOf(selectedCats[selectedCats.length -2])
-    //         let lastCatIndex = this.categories.indexOf(selectedCats[selectedCats.length -1])
-    //             console.log(firstCatIndex, lastCatIndex)
-    //             let sortedLength = [firstCatIndex, lastCatIndex]
-    //             let sortedArray = sortedLength.sort((a, b) => a - b)
-    //             console.log(sortedArray)
-    //             const copyOfSelected = this.categories.slice(sortedArray[0], sortedArray[1])
-    //             this.selectedCats = copyOfSelected.map(cat => cat.selected = true)
-    //     }
-    // isSelected(type) {
-    //   this.selectedType = type;
-    // }
-  },
   computed: {
     ...mapGetters(["mainData", "applicationData"])
   }

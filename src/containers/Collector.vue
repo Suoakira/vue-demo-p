@@ -1,13 +1,15 @@
 <template>
   <div class="main-collector">
-        
     <b-row>
       <div v-for="item in renderItems" :key="item.id">
-        <CollectorItem  :item="item" :showDelete="item.isPlaceholder ? true : false" :img_url="item.image_url" :title="item.title"></CollectorItem>
-
+        <CollectorItem
+          :item="item"
+          :showDelete="item.isPlaceholder ? true : false"
+          :img_url="item.image_url"
+          :title="item.title"
+        ></CollectorItem>
       </div>
 
-    
       <div class="settings-panel">
         <b-button class="btn btn-light">-)</b-button>
         <b-button @click="toggleCollector = !toggleCollector" class="btn btn-light">+</b-button>
@@ -27,7 +29,8 @@ export default {
       dummyItem: {
         id: "placeholder",
         isPlaceholder: true,
-        image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Equilateral_Triangle_Lattice.svg/2000px-Equilateral_Triangle_Lattice.svg.png"
+        image_url:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Equilateral_Triangle_Lattice.svg/2000px-Equilateral_Triangle_Lattice.svg.png"
       },
       localItems: []
     };

@@ -1,5 +1,5 @@
 <template>
-  <div>Hello from App Two</div>
+  <div>Hello from a Placeholder application</div>
 </template>
 
 

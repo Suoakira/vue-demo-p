@@ -39,6 +39,12 @@ export default new Vuex.Store({
     showSettings: state => state.showSettings
   },
   mutations: {
+    // install/uninstall application from side bar
+    appInstallation(state, app) {
+      app.installed = !app.installed
+    },
+
+
     //belongs to items
     selectCard(state, item) {
       item.selected = !item.selected;
@@ -50,6 +56,7 @@ export default new Vuex.Store({
       const deepCopyLocalItems = JSON.parse(JSON.stringify(localSelectedItems))
       this.deepCopyStateCollector = deepCopyLocalItems.forEach(item => state.collectorItems.push(item))
       const deepCopyStateCollector = JSON.parse(JSON.stringify(state.collectorItems))
+      // later this will filter based on presets
       state.collectorItems = _.uniqBy(deepCopyStateCollector, 'id')
     },
     deleteCollectorItem(state, localCollector) {

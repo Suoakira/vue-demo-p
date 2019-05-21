@@ -1,5 +1,5 @@
 <template>
-  <div class="my-collections-lg">Collections</div>
+  <div class="my-collections-lg">My Collections</div>
 </template>
 
 <script>

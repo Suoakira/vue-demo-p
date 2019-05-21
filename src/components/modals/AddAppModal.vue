@@ -14,6 +14,9 @@
       <div class="main-modal-cards">
         <div class="container">
           <div class="row">
+            <!-- inner modal  -->
+            <AppInstallModal :app="appSelected"/>
+            <!-- --- -->
             <div v-for="(app, key) in mainData.apps" :key="key" class="col-6">
               <div class="card mb-3" style="max-width: 540px;">
                 <div class="row no-gutters">
@@ -23,13 +26,28 @@
                   <div class="col-md-6">
                     <div class="card-body">
                       <h1 class="card-title"></h1>
+                      <i :class="app.icon"></i>
                       <p class="card-text">{{ app.name }}</p>
                       <p class="card-text">
-                        <button @click="showInstallModal" type="button" class="btn btn-danger">Uninstall</button>
+                        <button
+                          @click="showInstallModal(app)"
+                          v-if="app.installed"
+                          type="button"
+                          class="btn btn-danger"
+                        >Uninstall</button>
+
+                        <button
+                          @click="showInstallModal(app)"
+                          v-else
+                          type="button"
+                          class="btn btn-primary"
+                        >Install</button>
                       </p>
                       <div>
                         <p class="card-text">
-                          <small class="text-muted">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted"
+                          >Last updated {{ Math.floor(Math.random() * 60) + 1 }} mins ago</small>
                         </p>
                       </div>
                     </div>
@@ -45,29 +63,35 @@
 </template>
  
 <script scoped>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
+import AppInstallModal from "./InstallingModal.vue";
+
 import Header from "../Header";
 export default {
   data() {
-    return {};
+    return {
+      appSelected: undefined
+    };
   },
-  props: ["text"],
   methods: {
-        showInstallModal() {
-          console.log("fired")
-      this.$modal.show(
-        'app-install'
-      )
+    ...mapMutations([""]),
+    showInstallModal(app) {
+      this.appSelected = app;
+      console.log(app);
+      setTimeout(() => {
+        this.$store.commit("appInstallation", app);
+        this.$modal.hide("app-install");
+      }, 3000);
+
+      this.$modal.show("app-install");
     }
   },
   computed: {
     ...mapGetters(["mainData"])
   },
   components: {
-    Header
-  },
-  created() {
-    console.log(this.mainData);
+    Header,
+    AppInstallModal
   }
 };
 </script>

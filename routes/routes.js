@@ -1,7 +1,7 @@
 // side bar applications
 import AppOne from "../src/components/applications/appOne.vue"
-import AppTwo from "../src/components/applications/appTwo.vue"
-import Appthree from "../src/components/applications/appThree.vue"
+import PlaceholderApp from "../src/components/applications/PlaceholderApp.vue"
+
 import AddApplication from "../src/components/applications/AddApplication.vue"
 
 // settings side bar
@@ -54,9 +54,16 @@ export const routes =
                 component: MyCollections
             },
         ]},
-        // other side bar applications
-        { path: "/app-two", component: AppTwo, name: "app2" },
-        { path: "/app-three", component: Appthree, name: "app3" },
+        // other demo side bar applications
+        { path: "/app-two", component: PlaceholderApp, name: "app2" },
+        { path: "/app-three", component: PlaceholderApp, name: "app3" },
+        { path: "/app-four", component: PlaceholderApp, name: "app4" },
+        { path: "/app-five", component: PlaceholderApp, name: "app5" },
+        { path: "/app-six", component: PlaceholderApp, name: "app6" },
+        { path: "/app-seven", component: PlaceholderApp, name: "app7" },
+        { path: "/app-eight", component: PlaceholderApp, name: "app8" },
+
+        // opens application hub modal
         { path: "/add-application", component: AddApplication, name: "AddApplication" },
 
         // settings route
