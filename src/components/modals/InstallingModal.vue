@@ -22,7 +22,7 @@
         <b-row>
           <b-col>
             <div class="d-flex justify-content-center" id="uninstall-modal">
-              <h5>{{ app.installed ? "Uninstalling..." : "Installing..." }}</h5>
+              <h5>{{ app.status.installed ? "Uninstalling..." : "Installing..." }}</h5>
             </div>
           </b-col>
         </b-row>

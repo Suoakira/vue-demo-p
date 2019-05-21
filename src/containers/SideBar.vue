@@ -3,7 +3,7 @@
 <template>
   <div class="side-bar">
     <draggable v-model="mainApps"  @start="drag=true" @end="drag=false">
-      <div v-for="(app, index) in mainData.apps" :key="index" v-show="app.installed">
+      <div v-for="(app, index) in mainData.apps" :key="index" v-show="app.status.installed">
         <!-- placeholder link, if app-one route to app-one/dashboard -->
         <router-link
           :to="app.identifier === `app-one` ? `/${app.identifier}/dashboard` : `/${app.identifier}`"
@@ -15,7 +15,8 @@
         </router-link>
       </div>
     </draggable>
-
+    
+    <!-- // add to vue router -->
     <div @click="() => showAppModal()">
       <SideBarButton
         icon="fas fa-plus fa-2x"
@@ -23,11 +24,11 @@
       ></SideBarButton>
     </div>
 
-    <router-link to="/main-settings" v-b-modal.modal-lg>
-      <div class="main-settings-button">
+
+      <div @click="openSettingsModal" class="main-settings-button">
         <MainSettingsButton></MainSettingsButton>
       </div>
-    </router-link>
+
   </div>
 </template>
 
@@ -37,13 +38,24 @@ import SideBarButton from "../components/Buttons/SidebarButton.vue";
 import MainSettingsButton from "../components/Buttons/MainSettings.vue";
 import AddAppModal from "../components/modals/AddAppModal.vue";
 import { mapGetters } from "vuex";
+// vue dragable from https://github.com/SortableJS/Vue.Draggable
 import draggable from "vuedraggable";
 
 export default {
+
+  components: {
+    SideBarButton,
+    MainSettingsButton,
+    draggable
+  },
   methods: {
     // shows modal for app-settings
     showAppModal() {
       this.$modal.show("app-settings");
+    },
+    // shows global settings modal
+    openSettingsModal() {
+      this.$modal.show("global-settings");
     }
   },
   computed: {
@@ -54,19 +66,10 @@ export default {
         return this.$store.state.mainData.apps;
       },
       set(value) {
-        console.log(value)
         this.$store.commit("updateMainData", value);
       }
     }
   },
-  components: {
-    SideBarButton,
-    MainSettingsButton,
-    draggable
-  },
-  created() {
-    console.log("hello from side bar", this.mainData.apps);
-  }
 };
 </script>
 

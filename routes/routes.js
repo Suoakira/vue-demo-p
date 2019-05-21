@@ -2,8 +2,6 @@
 import AppOne from "../src/components/applications/appOne.vue"
 import PlaceholderApp from "../src/components/applications/PlaceholderApp.vue"
 
-import AddApplication from "../src/components/applications/AddApplication.vue"
-
 // settings side bar
 import Settings from "../src/containers/Settings.vue"
 
@@ -63,8 +61,7 @@ export const routes =
         { path: "/app-seven", component: PlaceholderApp, name: "app7" },
         { path: "/app-eight", component: PlaceholderApp, name: "app8" },
 
-        // opens application hub modal
-        { path: "/add-application", component: AddApplication, name: "AddApplication" },
+        
 
         // settings route
         { path: "/main-settings", component: Settings, name: "main-settings" },

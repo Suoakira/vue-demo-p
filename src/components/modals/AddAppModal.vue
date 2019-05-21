@@ -1,11 +1,17 @@
 <template>
-  <modal name="app-settings" :width="1150" :height="700" :adaptive="true" :scrollable="true">
+  <modal name="app-settings" :width="900" :height="600" :adaptive="true" :scrollable="true">
     <div class="app-modal-main">
       <b-container>
         <b-row>
-          <div class="modal-header">
-            <Header title="Applications Hub"/>
-          </div>
+          <b-col md="1" offset-md="1">
+          
+              <Header title="Applications Hub"/>
+     
+          </b-col>
+
+          <b-col md="1" offset-md="11">
+            <b-button @click="$modal.hide('app-settings')" variant="danger">X</b-button>
+          </b-col>
         </b-row>
         <!-- <b-row> -->
 
@@ -31,7 +37,7 @@
                       <p class="card-text">
                         <button
                           @click="showInstallModal(app)"
-                          v-if="app.installed"
+                          v-if="app.status.installed"
                           type="button"
                           class="btn btn-danger"
                         >Uninstall</button>
@@ -77,15 +83,13 @@ export default {
     ...mapMutations([""]),
     // has a bug wont work the first time
     showInstallModal(app) {
-      this.$modal.show("app-install")
+      this.$modal.show("app-install");
       this.appSelected = app;
       console.log(app);
       setTimeout(() => {
         this.$store.commit("appInstallation", app);
         this.$modal.hide("app-install");
       }, 3000);
-
-      
     }
   },
   computed: {
@@ -119,7 +123,5 @@ export default {
   border-radius: 1%;
 }
 
-.modal-header {
-  padding: 2%;
-}
+
 </style>

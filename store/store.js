@@ -41,20 +41,13 @@ export default new Vuex.Store({
   mutations: {
     // install/uninstall application from side bar
     appInstallation(state, app) {
-      app.installed = !app.installed
+      app.status.installed = !app.status.installed
     },
 
     // side bar main data mutation
     updateMainData(state, apps) {
-      console.log("apps",apps)
       state.mainData.apps = apps
-      // console.log("before", state.mainData.apps)
-      // let indexOfApp = state.mainData.apps.indexOf(app)
-
-      // state.mainData.apps[indexOfApp] = app
-      // console.log("after", state.mainData.apps)
     },
-
 
     //belongs to items
     selectCard(state, item) {
