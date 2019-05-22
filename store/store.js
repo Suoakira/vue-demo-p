@@ -11,32 +11,40 @@ import items from "../data/items";
 Vue.use(Vuex);
 // This will need to be broken out into modules collector, sidebar etc
 export default new Vuex.Store({
-  // refers to applications one
+
   state: {
     //split into modules later
     selectedItems: [],
     collectorItems: [],
 
-    // main application data/ items
+    // main application data/items
     mainData: main,
     applicationData: applicationData,
     items: items,
 
-    // main app
-    categoryCardsState: false,
+    // 
+    
   },
   getters: {
 
-    // getters for main
+    // main - applications installed
     mainData: state => state.mainData,
+    // application data - for transitions -x (app-one)
     applicationData: state => state.applicationData,
+    // items
     items: state => state.items,
 
-    // getters for collector
+    // collector
     collectorItems: state => state.collectorItems,
 
     // settings
     showSettings: state => state.showSettings
+  },
+  actions: {
+    // install/uninstall application from side bar
+    sendItemsToStore ({ commit }, items ) {
+      commit('sendItemsToStore', items )
+    }
   },
   mutations: {
     // install/uninstall application from side bar
@@ -44,7 +52,7 @@ export default new Vuex.Store({
       app.status.installed = !app.status.installed
     },
 
-    // side bar main data mutation
+    // Dragable side bar main data mutation
     updateMainData(state, apps) {
       state.mainData.apps = apps
     },
@@ -56,8 +64,8 @@ export default new Vuex.Store({
       state.selectedItems = state.selectedItems.filter(item => item.selected)
     },
     // belongs to collector
-    sendItemsToStore(state, localSelectedItems) {
-      const deepCopyLocalItems = JSON.parse(JSON.stringify(localSelectedItems))
+    sendItemsToStore(state, items) {
+      const deepCopyLocalItems = JSON.parse(JSON.stringify(items))
       this.deepCopyStateCollector = deepCopyLocalItems.forEach(item => state.collectorItems.push(item))
       const deepCopyStateCollector = JSON.parse(JSON.stringify(state.collectorItems))
       // later this will filter based on presets

@@ -33,7 +33,7 @@
 
 <script>
 import Card from "../../Card.vue";
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import _ from "lodash";
 import uuid from "uuid";
 
@@ -48,11 +48,9 @@ export default {
   },
   props: ["type"],
   methods: {
-    ...mapMutations(["selectCard"]),
-    // broken need to implement single select feature
-    //sends the selected item to the store
+    ...mapActions(["sendItemsToStore"]),
     singleSelect(item) {
-      // this.localSelected = this.map(item => item.selected = false)
+
       this.localSelected = this.filteredItems.forEach(
         localItem => (localItem.selected = false)
       );

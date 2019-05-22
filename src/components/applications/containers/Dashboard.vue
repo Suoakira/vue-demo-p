@@ -14,9 +14,6 @@ export default {
     Categories,
     Collections
   },
-  created() {
-    console.log(this.$router.currentRoute);
-  }
 };
 </script>
 
