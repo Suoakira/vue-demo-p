@@ -17,6 +17,8 @@
 
         <!-- </b-row> -->
       </b-container>
+
+      <!-- application cards -->
       <div class="main-modal-cards">
         <div class="container">
           <div class="row">
@@ -69,7 +71,7 @@
 </template>
  
 <script scoped>
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 import AppInstallModal from "./InstallingModal.vue";
 
 import Header from "../Header";
@@ -80,14 +82,13 @@ export default {
     };
   },
   methods: {
-    ...mapMutations([""]),
     // has a bug wont work the first time
     showInstallModal(app) {
       this.$modal.show("app-install");
       this.appSelected = app;
       console.log(app);
       setTimeout(() => {
-        this.$store.commit("appInstallation", app);
+        this.$store.dispatch("appInstallation", app);
         this.$modal.hide("app-install");
       }, 3000);
     }

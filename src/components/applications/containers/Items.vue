@@ -65,7 +65,7 @@ export default {
       this.sendItemsToCollector();
       this.filterMaxItems();
     },
-    // multiSelect
+    // cmd + multiSelect
     selectCards(item, $event) {
       item.selected = !item.selected;
 
@@ -79,15 +79,16 @@ export default {
     },
     sendItemsToCollector() {
       if (this.collectorItems.length < 8) {
+        // added uuid to distinguish items, in the future this will be replaced with preset id's
         this.localSelected.map(localItem => (localItem.id = uuid()));
-        this.$store.commit("sendItemsToStore", this.localSelected);
+        store.dispatch("sendItemsToStore", this.localSelected);
         // after items are sent to collector, they lose there selected status
         this.filteredItems.forEach(item => (item.selected = false));
         // emptys localSelected when they are sent to the collector
         this.localSelected = [];
       }
     },
-    // disabled send to collector, if there are more than eight items selected/in collector (bit buggy at the moment)
+    // disabled send to collector, if there are more than eight items selected/in collector.
     filterMaxItems() {
       const selectedCollectedItems = [
         ...this.collectorItems,

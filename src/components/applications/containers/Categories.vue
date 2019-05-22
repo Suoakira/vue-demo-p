@@ -21,7 +21,6 @@
     </b-row>
     <b-row>
       <div v-for="cat in applicationData.categories" :key="cat.name" class="card-container">
-        <!-- <div @click.meta="selectCard(cat, categories)" @click.shift="multiSelect(cat)" class="card-back" v-bind:style="{ backgroundColor: cat.selected ? `yellow` : 'blue'}"  > -->
         <div
           v-show="$router.currentRoute.fullPath == '/app-one/categories' || $router.currentRoute.fullPath == '/app-one/dashboard'"
           
