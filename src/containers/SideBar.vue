@@ -63,13 +63,14 @@ export default {
     // vue dragable implemenation
     mainApps: {
       get() {
-        return this.$store.state.mainData.apps;
+        return this.$store.state.mainIntegnity.mainData.apps;
       },
       set(value) {
         this.$store.commit("updateMainData", value);
       }
     }
   },
+
 };
 </script>
 

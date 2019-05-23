@@ -53,7 +53,7 @@ export default {
     Items
   },
   computed: {
-    ...mapGetters(["mainData", "applicationData"])
+    ...mapGetters( ["applicationData"])
   }
 };
 </script>

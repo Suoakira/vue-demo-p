@@ -104,6 +104,7 @@ export default {
 </script>
 
 <style>
+
 .app-modal-main {
   height: 100%;
   width: 100%;
@@ -123,6 +124,5 @@ export default {
   padding: 2%;
   border-radius: 1%;
 }
-
 
 </style>

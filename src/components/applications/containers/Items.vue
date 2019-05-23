@@ -81,7 +81,7 @@ export default {
       if (this.collectorItems.length < 8) {
         // added uuid to distinguish items, in the future this will be replaced with preset id's
         this.localSelected.map(localItem => (localItem.id = uuid()));
-        store.dispatch("sendItemsToStore", this.localSelected);
+        this.$store.dispatch("sendItemsToStore", this.localSelected);
         // after items are sent to collector, they lose there selected status
         this.filteredItems.forEach(item => (item.selected = false));
         // emptys localSelected when they are sent to the collector
@@ -126,7 +126,7 @@ export default {
     this.$root.$on("Items", () => {
       this.filterMaxItems();
     });
-  }
+  },
 };
 </script>
 
